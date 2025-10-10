@@ -27,10 +27,10 @@ intro {
 @media screen and (min-width: 450px) {
 
   intro {
-    --size: 250px;
+    --size: 300px;
 
     position: fixed;
-    top: calc(50% - var(--size) / 2);
+    top: calc(50% - var(--size) / 2.5);
     right: calc(50% - var(--size) / 2);
     z-index: 1;
     width: var(--size);
