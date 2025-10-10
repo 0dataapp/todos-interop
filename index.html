@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>todos interop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests -->
+  <link rel="icon" href="data:;base64,=">
+  
+	<link rel="stylesheet" href="https://yarn.pm/normalize.css">
+	<link rel="stylesheet" href="style.css">
+	<script src="https://cdn.jsdelivr.net/npm/remotestoragejs@latest/release/remotestorage.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/remotestorage-widget@latest/build/widget.js"></script>
+	<script src="remotestorage-module.js"></script>
+	<script src="app.js"></script>
+</head>
+<body>
+
+<app>
+	
+<intro>
+	<header>
+		<span><small><b>todos interop</b> — <a href="https://github.com/rosano/checklist">open-source</a> demo of multiple web apps synchronizing the same files using <a href="https://remotestorage.io/rs.js/docs/">remoteStorage.js</a>.</small></span>
+
+		<br>
+
+		<small>Connect storage on this page once to give permission for the apps below, or do it individually if you prefer.</small>
+	</header>
+</intro>
+
+<div id="widget-wrapper"></div>
+
+<frames>
+	<project>
+		<small class="domain">checklist.rosano.ca</small>
+		<iframe src="https://checklist.rosano.ca"></iframe>
+	</project>
+	<project>
+		<small class="domain">todomvc.rosano.ca</small>
+		<iframe src="https://todomvc.rosano.ca"></iframe>
+	</project>
+	<project>
+		<small class="domain">proof.0data.app</small>
+		<iframe src="https://proof.0data.app"></iframe>
+	</project>
+	<project>
+		<small class="domain">hello.0data.app</small>
+		<iframe src="https://hello.0data.app/remotestorage/"></iframe>
+	</project>
+</frames>
+
+</app>
+
+</body>
+</html>
