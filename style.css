@@ -95,6 +95,7 @@ project .domain {
 
   background: #333;
   color: #eee;
+  pointer-events: none;
 }
 
 iframe {
