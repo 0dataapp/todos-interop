@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
       e.src = `${ source }#remotestorage=${ remoteStorage.remote.userAddress }&access_token=${ remoteStorage.remote.token }`.replace(/#+/g, '#');
       parent.appendChild(e);
       
-      setTimeout(() => e.src = source, 1000);
+      setTimeout(() => e.src = source, 3000);
     });
   });
   
