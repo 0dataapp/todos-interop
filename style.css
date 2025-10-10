@@ -22,16 +22,37 @@ intro {
 
   background: #eee;
   font-size: 85%;
+}
 
-  position: fixed;
-  top: calc(50% - var(--size) / 2);
-  right: calc(50% - var(--size) / 2);
-  z-index: 1;
-  width: var(--size);
-  border-radius: var(--corner);
-  border: 1px solid #999;
+@media screen and (min-width: 450px) {
 
-  cursor: move;
+  intro {
+    --size: 250px;
+
+    position: fixed;
+    top: calc(50% - var(--size) / 2);
+    right: calc(50% - var(--size) / 2);
+    z-index: 1;
+    width: var(--size);
+    border-radius: var(--corner);
+    border: 1px solid #999;
+    opacity: 0.95;
+
+    cursor: move;
+  }
+
+}
+
+intro ul {
+  padding-left: var(--spacing);
+}
+
+details {
+  display: inline;
+}
+
+details summary {
+  display: inline list-item;
 }
 
 widget-container {
@@ -43,10 +64,18 @@ frames {
   width: 100%;
 
   display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-columns: 50% 50%;
   grid-template-rows: auto;
 
   flex-grow: 1;
+}
+
+@media screen and (max-width: 450px) {
+
+  frames {
+/*    grid-template-columns: 100%;*/
+  }
+
 }
 
 project {
