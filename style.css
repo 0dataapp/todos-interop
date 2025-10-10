@@ -17,16 +17,26 @@ app {
 }
 
 intro {
+  --size: 250px;
   padding: var(--spacing);
 
   background: #eee;
   font-size: 85%;
 
-  display: flex;
+  position: fixed;
+  top: calc(50% - var(--size) / 2);
+  right: calc(50% - var(--size) / 2);
+  z-index: 1;
+  width: var(--size);
+  border-radius: var(--corner);
+  border: 1px solid #999;
+
+  cursor: move;
 }
 
-#widget-wrapper {
-  flex-shrink: 0;
+widget-container {
+  display: flex;
+  justify-content: center;
 }
 
 frames {

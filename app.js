@@ -8,7 +8,7 @@ remoteStorage.access.claim('todos', 'rw');
 // setup after page loads
 document.addEventListener('DOMContentLoaded', () => {
 
-  (new Widget(remoteStorage)).attach('widget-wrapper');
+  (new Widget(remoteStorage)).attach(document.querySelector('widget-container'));
 
   remoteStorage.on('ready', () => {
     if (!remoteStorage.remote.token) {
