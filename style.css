@@ -17,8 +17,16 @@ app {
 }
 
 intro {
-  display: block;
   padding: var(--spacing);
+
+  background: #eee;
+  font-size: 85%;
+
+  display: flex;
+}
+
+#widget-wrapper {
+  flex-shrink: 0;
 }
 
 frames {
