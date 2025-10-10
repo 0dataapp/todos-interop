@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   mod.makeDraggable(document.querySelector('intro'), {
-    ignoredElement: document.querySelector('widget-container'),
+    ignoredElement: document.querySelector('#remotestorage-widget'),
   });
   
 });
