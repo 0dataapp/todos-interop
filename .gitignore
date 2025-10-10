@@ -1,0 +1,6 @@
+# OS
+**/*.DS_Store
+
+# LOCAL
+.env*
+!.env-sample
