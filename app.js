@@ -8,9 +8,29 @@ remoteStorage.access.claim('todos', 'rw');
 const mod = {
 
   // https://www.w3schools.com/howto/howto_js_draggable.asp
-  makeDraggable (elmnt, box = { x1: 0, y1: 0, x2: 0, y2: 0 }) {
+  makeDraggable (elmnt, params = {}) {
+    const box = { x1: 0, y1: 0, x2: 0, y2: 0 };
+
     elmnt.onmousedown = (event) => {
       event = event || window.event;
+
+      if (params.ignoredElement) {
+        const rect = params.ignoredElement.getBoundingClientRect();
+        const isInside = (
+          event.clientX >= rect.left &&
+          event.clientX <= rect.right &&
+          event.clientY >= rect.top &&
+          event.clientY <= rect.bottom
+        );
+
+        if (isInside) {
+            console.log("Mouse is inside the hit area.");
+            return;
+        } else {
+            console.log("Mouse is outside the hit area.");
+        }
+      }
+
       event.preventDefault();
       
       box.x2 = event.clientX;
@@ -57,6 +77,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  mod.makeDraggable(document.querySelector('intro'));
+  mod.makeDraggable(document.querySelector('intro'), {
+    ignoredElement: document.querySelector('widget-container'),
+  });
   
 });
