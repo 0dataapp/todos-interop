@@ -34,6 +34,8 @@ frames {
 project {
   display: block;
   position: relative;
+
+  display: flex;
 }
 
 project .domain {
@@ -52,7 +54,12 @@ project .domain {
 
 iframe {
   border: none;
-  width: 100%;
-  height: 100%;
   display: block;
+  border-left: 1px solid #999;
+  border-top: 1px solid #999;
+  flex-grow: 1;
+}
+
+project:first-of-type iframe {
+  border-left: none;
 }
