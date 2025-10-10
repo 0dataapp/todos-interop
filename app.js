@@ -5,6 +5,36 @@ const remoteStorage = new RemoteStorage({
 
 remoteStorage.access.claim('todos', 'rw');
 
+const mod = {
+
+  // https://www.w3schools.com/howto/howto_js_draggable.asp
+  makeDraggable (elmnt, box = { x1: 0, y1: 0, x2: 0, y2: 0 }) {
+    elmnt.onmousedown = (event) => {
+      event = event || window.event;
+      event.preventDefault();
+      
+      box.x2 = event.clientX;
+      box.y2 = event.clientY;
+      Object.assign(document, {
+        onmouseup: () => document.onmouseup = document.onmousemove = null,
+        onmousemove: (event) => {
+          event = event || window.event;
+          event.preventDefault();
+          
+          box.x1 = box.x2 - event.clientX;
+          box.y1 = box.y2 - event.clientY;
+          box.x2 = event.clientX;
+          box.y2 = event.clientY;
+
+          elmnt.style.top = (elmnt.offsetTop - box.y1) + 'px';
+          elmnt.style.left = (elmnt.offsetLeft - box.x1) + 'px';
+        },
+      })
+    };
+  },
+
+};
+
 // setup after page loads
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -26,5 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => e.src = source, 3000);
     });
   });
+
+  mod.makeDraggable(document.querySelector('intro'));
   
 });
