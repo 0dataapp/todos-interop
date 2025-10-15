@@ -98,14 +98,20 @@ project .domain {
   pointer-events: none;
 }
 
+project:first-of-type {
+  grid-row: span 2;
+}
+
 iframe {
   border: none;
   display: block;
-  border-left: 1px solid #999;
-  border-top: 1px solid #999;
   width: 100%;
 }
 
 project:first-of-type iframe {
-  border-left: none;
+  border-right: 1px solid #999;
+}
+
+project:last-of-type iframe {
+  border-top: 1px solid #999;
 }
